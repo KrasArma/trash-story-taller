@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+
+# Cache
+.cache/
+*.cache
+
+# Credentials and secrets
+configs/api-credentials.yaml
+
+# Test files and notebooks
+test*
+*.ipynb
+
+# Mapping config
+configs/generative-mapping.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+.idea/
+.vscode/ 

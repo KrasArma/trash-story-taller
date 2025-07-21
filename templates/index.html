@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Game App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div id="sidebar" class="sidebar">
+        <button class="closebtn" onclick="closeNav()">×</button>
+        <a href="#profile">Профиль</a>
+        <a href="#settings">Настройки</a>
+    </div>
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">☰ Меню</button>
+        <div class="center-content">
+            <div class="text-block">
+                <h1 id="title">TrashStoryTaller</h1>
+                <p id="description">Привет, <s>мир</s> друг! Я рад, Что заглянул в гости к нашему генератору интерактивных историй. Для начала выбери новую игру в одном из доступных режимов или загрузите сохранённую.</p>
+            </div>
+            <div class="button-block">
+                <div class="dropdown">
+                    <button onclick="toggleDropdown()" class="dropbtn">Новая игра</button>
+                    <div id="dropdown-content" class="dropdown-content">
+                        <a href="#" class="game-mode" data-mode="horror" onmouseover="showTooltip(event, 'Жуткое путешествие в мир - микс из темного фентези-средневековья, лавкравтовского безумия и вахи (че? :D) с публичными казнями вместо Блек-Джека и кровожадными чудовищами вместо шлюх.')" onmouseout="hideTooltip()" onclick="selectGame('horror', event)">horror</a>
+                        <a href="#" class="game-mode" data-mode="math-grinder" onmouseover="showTooltip(event, 'Если собеседование в яндекс - это бокс, то у нас тут гладиаторские бои насмерть! Тут нет победивших: есть только матан и твои мягкие упругие булочки. :D')" onmouseout="hideTooltip()" onclick="selectGame('math-grinder', event)">math-grinder</a>
+                        <a href="#" class="game-mode" data-mode="kekeke" onmouseover="showTooltip(event, 'Просто генерим кринж для тестирования и лулзов. Кушайте - не обляпайтесь!')" onmouseout="hideTooltip()" onclick="selectGame('kekeke', event)">kekeke</a>
+                    </div>
+                </div>
+                <button class="main-btn" onclick="alert('Загрузка игры to be soon...')">Загрузить игру</button>
+            </div>
+        </div>
+        <div id="tooltip" class="tooltip" style="display:none;"></div>
+        <div id="settings-modal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close" onclick="closeSettings()">&times;</span>
+                <h2>Язык / Language</h2>
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="ru">Русский</option>
+                </select>
+            </div>
+        </div>
+        <div id="kekeke-game" class="game-modal" style="display:none;">
+            <div class="game-content">
+                <h2 id="kekeke-greeting"></h2>
+                <input type="text" id="kekeke-answer" maxlength="200" placeholder="Отвечау!">
+                <button onclick="sendKekekeAnswer()">Отправить</button>
+            </div>
+        </div>
+    </div>
+    <script src="/static/main.js"></script>
+</body>
+</html> 
